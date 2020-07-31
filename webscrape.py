@@ -9,6 +9,10 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 import threading
+from luno_python.client import Client
+
+# TODO: investigate the luno python API
+# TODO: investigate the ice3 python API
 
 def pull_btc_rates():
 
@@ -55,19 +59,19 @@ def pull_btc_rates():
 
 
     rates = {}
+    #
+    # t1 = threading.Thread(target=luno_btc)
+    # t2 = threading.Thread(target=ice3_btc)
+    # t3 = threading.Thread(target=altcoin_btc)
+    #
+    # t1.start()
+    # t2.start()
+    # t3.start()
+    #
+    # t1.join()
+    # t2.join()
+    # t3.join()
 
-    t1 = threading.Thread(target=luno_btc)
-    t2 = threading.Thread(target=ice3_btc)
-    t3 = threading.Thread(target=altcoin_btc)
+    # return rates
 
-    t1.start()
-    t2.start()
-    t3.start()
-
-    t1.join()
-    t2.join()
-    t3.join()
-
-    return rates
-
-print(pull_btc_rates())
+# print(pull_btc_rates())
